@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Pemesanan Tiket</title>
+  <link href="https://fonts.googleapis.com/css2?family=Palatino&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #FFF;
+      font-family: 'Times new roman', serif;
+    }
+
+    header {
+      background-color: #ffc4d6;
+      text-align: center;
+      padding: 30px;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+    }
+
+    section {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color:#e37d96;
+      margin-bottom: 20px;
+    }
+
+    .alamat {
+      font-size: 20px;
+      color: #78172a;
+      margin-top: 10px;
+    }
+
+    .social-icons {
+      margin-top: 20px;
+    }
+
+    .social-icons a {
+      margin: 0 15px;
+      font-size: 40px;
+      color: #78172a;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #78172a;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 15px 30px;
+      background-color: #ff69b4; /* Warna pink cerah */
+      color: white;
+      border: #78172a;
+      font-size: 18px;
+	  font-weight: bold;
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #ff3385; /* Warna pink gelap */
+      transform: scale(1.1);
+    }
+
+    .gambar-wahana {
+      margin-top: 30px;
+      width: 100%;
+      height: 400px;
+      background-image: url('wahana.jpg'); /* Gambar wahana */
+      background-size: cover;
+      background-position: center;
+      animation: moveWahana 2s infinite alternate;
+    }
+
+    @keyframes moveWahana {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); }
+    }
+
+    footer {
+      margin-top: 50px;
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    Welcome to Crybaby Land!
+  </header>
+    <h2><center>Nikmati wahana beragam di Crybaby Land yang unik!</h2></center>
+
+    < <div class="gambar-wahana"><center>
+                <img src="map.jpg" alt="mapcrybaby">
+            </div></center>
+
+<ol><center><font color="#78172a">
+      <p> 1.Klik tombol 'Jenis paket' untuk melihat paket yang tersedia, wahana, dan harga.</p>
+      <p> 2.Setelah memilih paket yang diinginkan, klik 'Pemesanan' dan isi seluruh data dan form yang tertera di situs.</p>
+      <p> 3.Klik tombol 'Confirm' untuk mengonfirmasi pesanan dan membayar sesuai total.</p>
+      <p> 4.Struk dan barcode akan dikirim melalui email Anda.</p>
+    </ol></center></font>
+	
+    <div><center>
+      <button class="btn" onclick="window.location.href='pemesanan.html'">Pemesanan</button>
+      <button class="btn" onclick="window.location.href='jenispaket.html'">Jenis Paket</button>
+	  <button class="btn purple-btn" onclick="location.href='souvenir.html'">Souvenir</button>
+    </div></center>
+  </section>
+  
+      <div class="social-icons"><center>
+      <a href="https://www.instagram.com/popmartid/" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png" alt="Instagram" width="50">
+      </a>
+      <a href="https://www.tiktok.com/@popmartglobal?is_from_webapp=1&sender_device=pc" target="_blank">
+        <img src="tiktok.png" alt="TikTok" width="50">
+      </a>
+    </div></center>
+
+ <!-- Peta Lokasi -->
+        <div class="map-container">
+  <header>
+			 <img src="logolokasi.png" alt="lokasi" width="60">
+			 <h2><font color="#7d1021">Lokasi Kami</h2></font>
+			
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509234!2d144.96315791531576!3d-37.81627937975171!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad642af0f11fd81%3A0xf5774e0d6c3a68a!2sLuna%20Park%20Melbourne!5e0!3m2!1sen!2sid!4v1617182915232!5m2!1sen!" 
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+		</header></font>
+        </div>
+  <footer>
+    &copy; 2025 PopMart Crybaby
+  </footer>
+
+</body>
+</html>

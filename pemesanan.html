@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Tiket</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+        <!-- Left Voucher (Kotak 1 dan 2) -->
+        <div class="left-voucher">
+            <!-- Kotak 1 (Voucher Lebaran) -->
+            <div class="voucher voucher1">
+                <img src="promolebaran.jpg" alt="promosi lebaran">
+                <div class="promo-title">Promo Lebaran! Free Enterance pass!</div>
+                <div class="promo-info">Nikmati keindahan Crybaby Land di bulan Ramadhan</div>
+                <div class="validity">Berlaku sampai 28 Maret 2025</div>
+            </div>
+
+            <!-- Kotak 2 (Voucher Lebaran) -->
+            <div class="voucher voucher2">
+                <img src="promoonline.jpg" alt="Promo online">
+                <div class="promo-title">Promo Pembelian Online 10%!</div>
+                <div class="promo-info">Dapatkan diskon spesial di Web resmi kami!</div>
+                <div class="validity">Berlaku sampai 10 April 2025</div>
+            </div>
+        </div>
+</body>
+    <body>
+    <div class="container">
+        <h2>Form Pemesanan Tiket</h2>
+        <form id="bookingForm">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            
+            <label for="telp">No. Telepon:</label>
+            <input type="tel" id="telp" required>
+
+            <label for="birthdate">Tanggal Lahir:</label>
+            <input type="date" id="birthdate" required>
+
+            <label for="tanggal">Tanggal Kunjungan:</label>
+            <input type="date" id="tanggal" required>
+
+            <label for="waktu">Waktu:</label>
+            <input type="time" id="waktu" required>
+
+            <label for="paket">Jenis Tiket:</label>
+            <select id="paket" required>
+                <option value="Ekonomis">Ekonomis - Rp 200.000</option>
+                <option value="Regular">Regular - Rp 275.000</option>
+                <option value="Fast Track">Fast Track - Rp 350.000</option>
+            </select>
+
+            <button type="button" onclick="konfirmasiPesanan()">Confirm</button><br>
+			<p>Sebelum mengkonfirmasi data dan pemesanan, anda dapat meihat testimoni dan review dari pelanggan kami!</p>
+			<button id="testimoniBtn">Testimoni</button>
+<script>
+document.getElementById("testimoniBtn").addEventListener("click", function() {
+    window.location.href = "testimoni.html";
+});
+</script>
+        </form>
+    </div>
+	
+    </div>
+	   <!-- Right Voucher (Kotak 3 dan 4) -->
+        <div class="right-voucher">
+            <!-- Kotak 3 (Promo Children) -->
+            <div class="voucher voucher3">
+                <img src="promoanakanak.jpg" alt="Promo Children">
+                <div class="promo-title">Promo Children under 5 y.o</div>
+                <div class="promo-info">Nikmati diskon untuk anak-anak di bawah 5 tahun!</div>
+                <div class="validity">Berlaku sampai 31 Januari 2026</div>
+            </div>
+
+            <!-- Kotak 4 (Promo Couple) -->
+            <div class="voucher voucher4">
+                <img src="promovalentine.jpg" alt="Promo Couple">
+                <div class="promo-title">Promo Couple, Nikmati Seru-seruan bersama pasangan Anda!</div>
+                <div class="promo-info">Diskon spesial untuk pasangan di Crybaby Land</div>
+                <div class="validity">Berlaku sampai 31 Januari 2026</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Popup -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <p>Terima Kasih dan ditunggu kehadirannya^^!</p>
+            <button onclick="tutupPopup()">OK</button>
+        </div>
+    </div>
+
+
+    <script>
+        function konfirmasiPesanan() {
+            let nama = document.getElementById("nama").value;
+            let email = document.getElementById("email").value;
+            let telp = document.getElementById("telp").value;
+            let birthdate = document.getElementById("birthdate").value;
+            let tanggal = document.getElementById("tanggal").value;
+            let waktu = document.getElementById("waktu").value;
+            let paket = document.getElementById("paket").value;
+
+            if (nama && email && telp && birthdate && tanggal && waktu && paket) {
+                document.getElementById("popup").style.display = "flex";
+            } else {
+                alert("Harap isi semua data!");
+            }
+        }
+
+        function tutupPopup() {
+            document.getElementById("popup").style.display = "none";
+            document.getElementById("bookingForm").reset(); // Reset form setelah popup ditutup
+        }
+    </script>
+	
+
+    <style>
+        body {
+            font-family: Times new roman;
+            background: #fce4ec;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+     .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Kotak Voucher */
+        .voucher {
+            width: 300px;
+            height: 300px;
+            background-color: #FFFAFA;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 20px;
+			font-weight: bold;
+        }
+
+        .voucher img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+			animation: movevoucher 3s infinite alternate;
+    }
+
+    @keyframes movevoucher {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-20px); }
+    }
+        }
+
+        .voucher .promo-title {
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 10px;
+			font-weight: bold;
+        }
+
+        .voucher .promo-info {
+            font-size: 14px;
+            color: gray;
+            margin-top: 10px;
+			font-weight: bold;
+        }
+
+        .voucher .validity {
+            font-size: 12px;
+            color: #9b9b9b;
+            margin-top: 10px;
+			font-weight: bold;
+        }
+
+        .voucher1 {
+            background-color: #FFFAFA;
+        }
+
+        .voucher2 {
+            background-color: #FFFAF0;
+        }
+
+        .voucher3 {
+            background-color: #FFFAFA;
+        }
+
+        .voucher4 {
+            background-color: #FFFAF0;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+			color:#ba68c8;
+			font-weight: bold;
+        }
+
+        h2 {
+            color: #ba68c8;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            text-align: center;
+        }
+
+        input, select {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background: #ba68c8;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #ab47bc;
+        }
+	
+
+        /* Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: #f8bbd0;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            color: #6a1b9a;
+        }
+
+        .popup button {
+            background: #6a1b9a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</body>
+</html>
